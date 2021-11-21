@@ -7,7 +7,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <title>Projeto Integrador VIII - Univesp</title>
     <link rel='stylesheet' type='text/css' href='css/principal.css'>
 </head>
@@ -25,7 +25,9 @@
                 </td>
                 <td>
                     <!-- Inserindo o BUTTON do Speech-4N2 em um site -->
-                    <button id="botaoHabilitaPlugin" onclick="habilitaPlugin(), capturaTexto()"></button>
+                    <button id="botaoHabilitaPlugin" onclick="parent.habilitaPlugin(), parent.capturaTexto()">
+                    <img src="/images/som.png"/>
+                    </button>
                     <input type="hidden" id="acao">
                     <!-- Fim da inserção do button-->
                 </td>
