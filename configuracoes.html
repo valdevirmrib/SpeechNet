@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<!--
+    Valdevir Matos Ribeiro 1704524
+        
+-->
+
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' type='text/css' href='css/iframe.css'>
+    <title></title>
+</head>
+
+<body onload="tiposDeVozes(), resetaLabelTexto(), resetaLabelTextoVelocidade()">
+    <br />
+    <main>
+        <section>
+            <table>
+                <td>
+                    <input type="range" class="controles" id="volume" min="0" max="1" value="0.5" step="0.1"
+                        onchange="valorLabelVolume()">
+                    <label id="lblvolume"></label>
+                    <label id="lblVolumeTitulo">Volume</label>
+                </td>
+
+                <td>
+                    <input type="range" class="controles" id="velocidade" value="1.0" min="0" max="3.0" step="0.5"
+                        onchange="valorLabelVelocidade()">
+                    <label id="lblvelocidade"></label>
+                    <label id="lblVelocidadeTitulo">Velocidade</label>
+                </td>
+                <td>
+                    <input type="color" id="cores">
+                    <label id="lblcores"></label><br />
+                    <label id="lblCoresTitulo">Cores</label>
+                </td>
+            </table>
+        </section>
+        <br />        
+        <p></p>
+        <section>
+            <article><label id="lblvozes">Vozes &nbsp; </label></article>
+            <div>
+                <select id="vozes" class="vozes" name="vozes">
+                    <option>Selecione a voz...</option>
+                </select>
+            </div>
+        </section>
+        <button id="aplicar" onclick="parent.aplicarConfiguracoes()">Aplicar</button>
+        <button id="fechar" onclick="parent.habilitaPluginConfiguracoes()"></button>
+    </main>
+    <footer>
+        <br /><br />
+        Univesp | Grupo 4N.2 - Polo Heliópolis
+        <br />
+        Todos os Direitos Reservados 2021
+    </footer>
+
+    <script>
+
+        let idVoz = document.createElement('hidden');
+
+        //let targetOrigem="https://grupo4n2.github.io";
+        let targetOrigem = "*"; //PARA TESTE
+        window.addEventListener("load", carregarAcoes());
+
+        function enviarAcao(acao) {
+            window.top.postMessage(acao, targetOrigem);
+        }
+
+        function carregarAcoes() {
+            tiposDeVozes();
+            document.getElementById("volume").addEventListener("change",
+                function () {
+                    enviarAcao("vo" + document.getElementById("volume").value);
+                }, true);
+
+            document.getElementById("velocidade").addEventListener("change",
+                function () {
+                    enviarAcao("ve" + document.getElementById("velocidade").value);
+                }, true);
+
+            document.getElementById("vozes").addEventListener("change",
+                function () {
+                    enviarAcao("vz" + document.getElementById("vozes").value);
+                }, true);
+        }
+
+        function valorLabelVolume() {
+            let valorVolume = (document.getElementById('volume').value) * 100;
+            document.getElementById('lblvolume').innerText = valorVolume + "%";
+        }
+
+        function valorLabelVelocidade() {
+            let valorVelocidade = (document.getElementById('velocidade').value);
+            document.getElementById('lblvelocidade').innerText = valorVelocidade;
+        }
+
+        function resetaLabelTexto() {
+            document.getElementById('lblvolume').innerText = document.getElementById("volume").value * 100 + "%";
+        }
+
+        function resetaLabelTextoVelocidade() {
+            document.getElementById('lblvelocidade').innerText = document.getElementById('velocidade').value;
+        }
+
+        function tiposDeVozes() {
+            
+            if (typeof speechSynthesis === 'undefined') {
+                return;
+            }
+            let vozes = speechSynthesis.getVoices();
+            for (let i = 0; i < vozes.length; i++) {
+                let option = document.createElement('option');                
+                if (i < 9) {                    
+                    option.textContent = "0"+(i + 1) + "." + vozes[i].name;
+                } else {
+                    option.textContent = (i + 1) + "." + vozes[i].name;
+                }
+                if (vozes[i].default) {
+                    option.textContent += ' -- Padrão';
+                }
+                document.getElementById("vozes").appendChild(option);
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
