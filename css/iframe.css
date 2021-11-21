@@ -46,7 +46,7 @@ button {
 }
 
 #fechar{
-    background-image: url('/images/dismiss.contrast-white.png');
+    background-image: url('https://valdevirmrib.github.io/SpeechNet/images/dismiss.contrast-white.png');
     background-size: 30px 30px;
     height: 30px;  
     width: 30px;
