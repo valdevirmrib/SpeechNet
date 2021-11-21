@@ -1,0 +1,112 @@
+/*
+    Valdevir Matos Ribeiro 1704524
+    
+*/
+
+body {
+    --corFundo: #ece8ee;
+    --corButton: #000000;
+    --corTexto: #000000;
+    background-color: var(--corFundo);
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--corTexto);
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    padding: 0px 0px 0px 0px;            
+}
+
+button {
+    border: 0px;
+    border-radius: 5px;
+    width:60px;
+    height: 60px;
+    display: inline-block;
+    background-color: none;
+    background-position: center;
+}
+
+#aplicar{    
+    font-weight: bold;
+    font-size: 14px;
+    border:solid;
+    border-color: #CCCCCC;
+    border-radius: 5px;
+    border-width: 2px;
+    height: 30px;  
+    width: 60px;
+    position:absolute;
+    float: right;
+    left: 80%;            
+    top: 63%;
+    color: var(--corTexto);    
+}
+
+#fechar{
+    background-image: url('/images/dismiss.contrast-white.png');
+    background-size: 30px 30px;
+    height: 30px;  
+    width: 30px;
+    position:absolute;
+    float: right;
+    left: 95%;            
+    top: 0px;
+    border-radius: 0px;
+    
+} 
+table {
+    width: 100%;
+    border: none #000000;
+    font-weight: bold;    
+}
+
+td {
+    border: solid 0px;
+    border-radius: 0px;
+    padding: 0px;
+    width: 0%;
+    text-align: center;
+}
+
+section{
+    width: 100%;
+    display:inline-flex;
+    border: solid;
+    border-width: 0px;    
+}
+
+article{
+    text-transform:none;
+    margin-left: 8vw;
+    margin-right: 0vw;
+}
+
+label {
+    background-color: none;
+    font-size: 1.0rem;
+}
+
+.controles{
+    display:inline-table;        
+    padding: 0% 0% 0% 0%;
+    width: 100px;    
+}
+
+#velocidade{
+    margin-left: 5vw;
+}
+
+footer {
+    font-size: 10px;
+    text-align: center;
+}
+select{
+    border:solid;
+    border-color: #CCCCCC;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
