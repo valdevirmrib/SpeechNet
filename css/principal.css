@@ -225,11 +225,8 @@ td {
 }
 
 #botaoHabilitaPlugin {
-    width: 48px;
-    height: 48px;
-    background-image: url("https://github.com/valdevirmrib/SpeechNet/blob/4617653ef3f75067daca58cbef2211039ddf37fc/images/som.png");
-    background-repeat: no-repeat;
-    background-size: 48px;
+    width: 60px;
+    height: 60px;        
     float: right;
     position: relative;
     left: 45px;
