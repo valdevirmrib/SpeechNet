@@ -1,6 +1,6 @@
 /*
-    Valdevir Matos Ribeiro 1704524
-    
+    Autor: Valdevir Matos Ribeiro
+        
 */
 
 //variáveis globais

@@ -1,6 +1,5 @@
 /*
-    Autor: Valdevir Matos Ribeiro
-    
+    Autor: Valdevir Matos Ribeiro    
 */
 
 //variáveis globais
@@ -21,7 +20,6 @@ function speech() {
     speechSynthesis.speak(speech4n2);
 
 }
-
 
 if (window.addEventListener) {
     window.addEventListener('message', acao, false);
