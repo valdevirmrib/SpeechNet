@@ -40,7 +40,7 @@
                 </td>
             </table>
         </section>
-        <br />        
+        <br />
         <p></p>
         <section>
             <article><label id="lblvozes">Vozes &nbsp; </label></article>
@@ -50,22 +50,24 @@
                 </select>
             </div>
         </section>
-        <button id="aplicar" onclick="parent.aplicarConfiguracoes()">Aplicar</button>
+        
         <button id="fechar" onclick="parent.habilitaPluginConfiguracoes()"></button>
     </main>
+    <section>
+        <button id="aplicar" onclick="parent.aplicarConfiguracoes()">Aplicar</button>
+    </section>
+    <br>
     <footer>
-        <br /><br />
-        Univesp | Grupo 4N.2 - Polo Heliópolis
-        <br />
-        Todos os Direitos Reservados 2021
+        Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021
     </footer>
 
     <script>
 
         let idVoz = document.createElement('hidden');
 
-        let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
-        //let targetOrigem = "*"; //PARA TESTE
+        //let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
+        let targetOrigem = "*";  //PARA TESTE        
+
         window.addEventListener("load", carregarAcoes());
 
         function enviarAcao(acao) {
@@ -97,7 +99,7 @@
 
         function valorLabelVelocidade() {
             let valorVelocidade = (document.getElementById('velocidade').value);
-            document.getElementById('lblvelocidade').innerText = valorVelocidade;
+            document.getElementById('lblvelocidade').innerText = valorVelocidade+"X";
         }
 
         function resetaLabelTexto() {
@@ -105,23 +107,25 @@
         }
 
         function resetaLabelTextoVelocidade() {
-            document.getElementById('lblvelocidade').innerText = document.getElementById('velocidade').value;
+            document.getElementById('lblvelocidade').innerText = document.getElementById('velocidade').value + "X";
         }
 
         function tiposDeVozes() {
-            
+
             if (typeof speechSynthesis === 'undefined') {
                 return;
             }
+            
             let vozes = speechSynthesis.getVoices();
-            for (let i = 0; i < vozes.length; i++) {
-                let option = document.createElement('option');                
-                if (i < 9) {                    
-                    option.textContent = "0"+(i + 1) + "." + vozes[i].name;
+
+            for (let contarVozes = 0; contarVozes < vozes.length; contarVozes++) {
+                let option = document.createElement('option');
+                if (contarVozes < 9) {
+                    option.textContent = "0" + (contarVozes + 1) + "." + vozes[contarVozes].name;
                 } else {
-                    option.textContent = (i + 1) + "." + vozes[i].name;
+                    option.textContent = (contarVozes + 1) + "." + vozes[contarVozes].name;
                 }
-                if (vozes[i].default) {
+                if (vozes[contarVozes].default) {
                     option.textContent += ' -- Padrão';
                 }
                 document.getElementById("vozes").appendChild(option);

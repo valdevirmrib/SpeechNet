@@ -8,7 +8,7 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>Projeto Integrador VIII - Univesp</title>
+    <title>SpeechNet-2021</title>
     <link rel='stylesheet' type='text/css' href='css/principal.css'>
 </head>
 
@@ -26,7 +26,7 @@
                 <td>
                     <!-- Inserindo o BUTTON do Speech-4N2 em um site -->
                     <button id="botaoHabilitaPlugin" onclick="parent.habilitaPlugin(), parent.capturaTexto()">
-                    <img src="images/som.png"/>
+                    <img src="images/logo_speech4n2.png"/>
                     </button>
                     <input type="hidden" id="acao">
                     <!-- Fim da inserção do button-->
@@ -143,8 +143,8 @@
         <article>
             <h3>Acessibilidades</h3>
             <br />
-            <header>Speech-Grupo 4N.2 </header>
-            <a href="https://grupo4n2.github.io/Grupo4N2Page/"><img id="speech4N2" src="images/speech_4n2.png" /></a>
+            <header>SpeechNet</header>
+            <a href="#"><img id="SpeechNet" src="images/logo_speech4n2.png" /></a>
 
             <header>VLibras</header>
             <a href="https://www.gov.br/governodigital/pt-br/vlibras/"><img id="libras" src="images/libras2.png"></a>
@@ -160,18 +160,28 @@
 
     <footer>
         <article>
-            <h5> Univesp | Grupo 4N.2 - Polo Heliópolis | Todos os Direitos Reservados 2021</h5>
+            <h5> Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</h5>
         </article>
     </footer>
 
 
-    <!-- INICIO DA INCLUSÃO DO PLUGIN -->
+    <!-- INICIO DA INCLUSÃO DO PLUGIN
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speech4n2.js"></script>
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/funcoesJS.js"></script>
     <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No"
-     src="https://valdevirmrib.github.io/SpeechNet/windowSpeech4N2.html"></iframe>
-    <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
+     src="https://valdevirmrib.github.io/SpeechNet/windowSpeech4N2.html"></iframe>    
+     <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
         src="https://valdevirmrib.github.io/SpeechNet/configuracoes.html"></iframe>
+    -->
+
+    <!--PARA TESTE EM COMPUTADOR LOCAL-->
+    <script type="text/javascript" src="speech4n2.js"></script>
+    <script type="text/javascript" src="funcoesJS.js"></script>
+    <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No"
+     src="windowSpeech4N2.html"></iframe>    
+     <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
+        src="configuracoes.html"></iframe>
+    
     <!-- FIM DA INCLUSÃO DO PLUGIN -->
     
 

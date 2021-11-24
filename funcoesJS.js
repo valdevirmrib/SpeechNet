@@ -6,6 +6,10 @@
 //variáveis globais
 let globalTexto;
 
+function fecharPagina(){
+  speechSynthesis.cancel();
+}
+
 function capturaTexto() {
   let contador;
   globalTexto = document.getElementById("Principal").textContent;
@@ -23,14 +27,17 @@ function contaPalavras() {
   tamanhoTexto = quantidadeDePalavras.length;
 }
 
-function habilitaPlugin() {  
+function habilitaPlugin() {    
   let statusPlugin = document.getElementById('plugin').style.visibility;
+
   if (statusPlugin == "" || statusPlugin == "hidden") {
     document.getElementById('plugin').style.visibility = "visible";
     document.getElementById('configuracoes').style.visibility = "hidden";
+    speechSynthesis.resume();
   }
   else {
     document.getElementById('plugin').style.visibility = "hidden";
+    speechSynthesis.cancel();
   }
 }
 
@@ -39,10 +46,12 @@ function habilitaPluginConfiguracoes() {
   if (statusPlugin == "" || statusPlugin == "hidden") {
     document.getElementById('configuracoes').style.visibility = "visible";
     document.getElementById('plugin').style.visibility = "hidden";
+    speechSynthesis.cancel();
   }
   else {
     document.getElementById('configuracoes').style.visibility = "hidden";
     document.getElementById('plugin').style.visibility = "visible";
+    speechSynthesis.resume();
   }
 }
 

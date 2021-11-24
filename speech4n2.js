@@ -1,10 +1,10 @@
 /*
-    Valdevir Matos Ribeiro 1704524
+    Autor: Valdevir Matos Ribeiro
     
 */
 
 //variáveis globais
-let globalVoice = speechSynthesis.voice;
+let globalVoz = speechSynthesis.voice;
 let globalVolume = 0.5;
 let globalRate = 1.0;
 let globalPitch = 1.0;
@@ -13,7 +13,7 @@ let PLAYSTOP = 0;
 
 
 function speech() {
-    speech4n2.voice = globalVoice;
+    speech4n2.voice = globalVoz;
     speech4n2.volume = globalVolume;
     speech4n2.rate = globalRate;
     speech4n2.pitch = globalPitch;
@@ -57,7 +57,7 @@ function acao(e) {
 
 
     switch (e.data) {
-        case 'tocarparar':
+        case 'lerparar':
             if (speechSynthesis.paused) {
                 speechSynthesis.resume(speech4n2);
                 break;
@@ -93,12 +93,12 @@ function volumeDaLeitura(volume) {
     globalVolume = parseFloat(volume);
 }
 
-function alteraVoz(numeroVoz) {
-    let voices = [];
-    voices = speechSynthesis.getVoices();
-    for (i = 0; i < voices.length; i++) {
-        if (i == numeroVoz) {
-            globalVoice = voices[i];
+function alteraVoz(posicaoDaVoz) {
+    let vozes = [];
+    vozes = speechSynthesis.getVoices();
+    for (contarVozes = 0; contarVozes < vozes.length; contarVozes++) {
+        if (contarVozes == posicaoDaVoz) {
+            globalVoz = vozes[contarVozes];
         }
     }
 }

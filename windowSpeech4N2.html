@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-    Valdevir Matos Ribeiro 1704524       
+    Autor: Valdevir Matos Ribeiro
 -->
 
 <html>
@@ -23,7 +23,7 @@
                 <label>Retroceder</label>
             </td>
             <td>
-                <button classname="botoes" id="tocarparar"><img classname="imgbotoes"
+                <button classname="botoes" id="lerparar"><img classname="imgbotoes"
                         src="images/play_64x64.png"></button>
                 <label>Ler/Parar</label>
             </td>
@@ -48,14 +48,14 @@
     <br />
     <footer>
         <br />
-        Univesp | Grupo 4N.2 - Polo Heliópolis
-        <br />
-        Todos os Direitos Reservados 2021
+        Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021
     </footer>
     
     <script>
-        let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
-        //let targetOrigem = "*"; //PARA TESTE
+
+        //let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
+        let targetOrigem = "*"; //PARA TESTE        
+
         window.addEventListener("load", carregarAcoes());    
     
         function enviarAcao(acao) {
@@ -63,9 +63,9 @@
         }
             
         function carregarAcoes() {
-            document.getElementById("tocarparar").addEventListener("click",
+            document.getElementById("lerparar").addEventListener("click",
                 function () {
-                    enviarAcao("tocarparar");
+                    enviarAcao("lerparar");
                 }, true);
 
             document.getElementById("pausar").addEventListener("click",
@@ -89,7 +89,14 @@
         }
     </script> 
     
+    <!--
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speech4n2.js"></script>
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/funcoesJS.js"></script>    
+    -->
+
+    <!--PARA TESTE EM COMPUTADOR LOCAL-->
+    <script type="text/javascript" src="speech4n2.js"></script>
+    <script type="text/javascript" src="funcoesJS.js"></script>
+
 </body>
 </html>
