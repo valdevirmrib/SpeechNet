@@ -41,7 +41,7 @@ button {
     position:absolute;
     float: right;
     left: 80%;            
-    top: 63%;
+    top: 75%;
     color: var(--corTexto);    
 }
 
@@ -60,7 +60,8 @@ button {
 table {
     width: 100%;
     border: none #000000;
-    font-weight: bold;    
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 td {
@@ -102,6 +103,8 @@ label {
 footer {
     font-size: 10px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 select{
     border:solid;
