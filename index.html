@@ -7,12 +7,13 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-    <title>SpeechNet-2021</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">    
     <link rel='stylesheet' type='text/css' href='css/principal.css'>
+    <link rel="stylesheet" type="text/css" href="css/contraste.css">    
+    <title>SpeechNet-2021</title>    
 </head>
 
-<body>
+<body>    
     <header id="Principal">
         <table>
             <tr>
@@ -22,37 +23,34 @@
                 <td>
                     <h3 id="tituloPrincipal">Central de Pesquisas, Dados e Informações sobre doenças contagiosas,
                         pandemias, endemias, epidemias e catástrofes no Brasil</h3>
-                </td>
+                </td>                
                 <td>
+                    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
+                        <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>                        
                     <!-- Inserindo o BUTTON do SpeechNet em um site -->
-                    <button id="botaoHabilitaPlugin" onclick="parent.habilitaPlugin(), parent.capturaTexto()">
-                    <img src="images/logo_speech4n2.png"/>
+                    <button id="botaoHabilitaPlugin"
+                        onclick="window.parent.habilitaPlugin(), window.parent.capturaTexto()">
+                        <img src="images/logo_speech4n2.png" />
                     </button>
                     <input type="hidden" id="acao">
                     <!-- Fim da inserção do button-->
-                </td>
+                </td>                
             </tr>
         </table>
     </header>
-
+    <br><br>
     <nav>
-        <article>
-            <br />
+        <article>            
             <h3>Menu</h3>
-            <br />
-
-            <a href="https://www.saude.gov.br"><h5>Ministério da Saúde</h5></a>
-
-            <a href="https://vacinaja.sp.gov.br"><h5>Vacina Já</h5></a>
-
-            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/vigilancia_em_saude/index.php?p=307599">
-            <h5>Vacina Sampa</h5></a>
-
-            <a href="https://github.com/"><h5>Git hub</h5></a>            
-
+            <br />            
+            <a href="https://www.saude.gov.br" target="_blank">Ministério da Saúde</a>
+            <a href="https://vacinaja.sp.gov.br" target="_blank">Vacina Já</a>
+            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/vigilancia_em_saude/index.php?p=307599" target="_blank">
+                Vacina Sampa</a>
+            <a href="https://github.com/" target="_blank">Git hub</a>
+            <a href="https://valdevirmrib.github.io/SpeechNet/" target="_blank">SpeechNet</a>
         </article>
-    </nav>
-    <br />
+    </nav>    
     <section>
         <article>
             <h3>Notícias da semana</h3>
@@ -97,7 +95,7 @@
             </h4>
         </article>
     </section>
-
+    
     <section>
         <article>
             <h3>Campanhas</h3>
@@ -145,7 +143,6 @@
             <br />
             <header>SpeechNet</header>
             <a href="#"><img id="SpeechNet" src="images/logo_speech4n2.png" /></a>
-
             <header>VLibras</header>
             <a href="https://www.gov.br/governodigital/pt-br/vlibras/"><img id="libras" src="images/libras2.png"></a>
         </article>
@@ -153,8 +150,8 @@
     <section>
         <article>
             <br />
-            <header>configurações</header>
-            <img id="" src="images/logo.targetsize-256_contrast-white.png">
+            <header>Configurações</header>
+            <img class="on-contrast-force-white" src="images/logo.targetsize-256_contrast-white.png">
         </article>
     </section>
 
@@ -163,9 +160,11 @@
             <h5> Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</h5>
         </article>
     </footer>
+  
 
     <!-- INICIO DA INCLUSÃO DO PLUGIN-->
-    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>    
+    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>     
+    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script>  
     <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No"
      src="https://valdevirmrib.github.io/SpeechNet/windowSpeechNet.html"></iframe>    
      <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
@@ -173,12 +172,11 @@
      <!--FIM DA INCLUSÃO DO PLUGIN -->
 
     <!--PARA TESTE EM COMPUTADOR LOCAL
-    <script type="text/javascript" src="speechNet.js"></script>    
-    <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No"
-     src="windowSpeechNet.html"></iframe>    
-     <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
+    <script type="text/javascript" src="speechNet.js"></script>
+    <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No" src="windowSpeechNet.html"></iframe>
+    <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
         src="configuracoesSpeechNet.html"></iframe>
     -->
-</body>
 
+</body>
 </html>

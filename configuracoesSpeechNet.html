@@ -11,12 +11,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' type='text/css' href='css/iframe.css'>
+    <link rel='stylesheet' type='text/css' href='css/contraste.css'>    
     <title></title>
 </head>
 
 <body onload="tiposDeVozes(), resetaLabelTexto(), resetaLabelTextoVelocidade()">
     <br />
-    <main>
+    <main>        
         <section>
             <table>
                 <td>
@@ -49,20 +50,18 @@
                 </select>
             </div>
         </section>
+        <button id="aplicar" onclick="window.parent.aplicarConfiguracoes()">Aplicar</button> 
+        <span>Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</span>
+        </main>        
+        <a class="acessibilidade" href="#" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
+            <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>   
         
-        <button id="fechar" onclick="parent.habilitaPluginConfiguracoes()"></button>
-    </main>
-    <section>
-        <button id="aplicar" onclick="parent.aplicarConfiguracoes()">Aplicar</button>
-    </section>
-    <br>
-    <footer>
-        Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021
-    </footer>
-
+        <button id="fechar" onclick="window.parent.habilitaPluginConfiguracoes()">
+            <img class="on-contrast-force-white" src="/images/dismiss.contrast-white.png">
+        </button>                
+        
+    
     <script>
-
-        //let idVoz = document.createElement('hidden');
 
         let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
         //let targetOrigem = "*";  //PARA TESTE EM COMPUTADOR LOCAL
@@ -74,7 +73,9 @@
         }
 
         function carregarAcoes() {
+
             tiposDeVozes();
+
             document.getElementById("volume").addEventListener("change",
                 function () {
                     enviarAcao("vo" + document.getElementById("volume").value);
@@ -88,6 +89,11 @@
             document.getElementById("vozes").addEventListener("change",
                 function () {
                     enviarAcao("vz" + document.getElementById("vozes").value);
+                }, true);
+
+                document.getElementById("cores").addEventListener("change",
+                function () {                    
+                    enviarAcao("co" + document.getElementById("cores").value);
                 }, true);
         }
 
@@ -132,13 +138,15 @@
         }
     </script>
 
-     <!--PARA TESTE EM COMPUTADOR LOCAL-->
+     <!--INSERIR PLUGIN NA PÁGINA HTML-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>    
-    
+    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script> 
+     
 
     <!--PARA TESTE EM COMPUTADOR LOCAL
-    <script type="text/javascript" src="speechNet.js"></script>
+    <script type="text/javascript" src="speechNet.js"></script>    
     -->
+    
 
 </body>
 </html>

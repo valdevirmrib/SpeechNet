@@ -9,47 +9,52 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>    
-    <link rel='stylesheet' type='text/css' href='css/iframe.css'> 
+    <link rel='stylesheet' type='text/css' href='css/iframe.css'>
+    <link rel='stylesheet' type='text/css' href='css/contraste.css'>    
     <title></title>
 </head>
 
-<body>
+<body>    
     <input type="hidden" id="acao">
+    <a class="acessibilidade" href="#" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
+        <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>   
     <table>
         <tr>
             <td>
-                <button classname="botoes" id="retroceder"><img classname="imgbotoes"
-                        src="images/retroceder_64x64.png"></button>
-                <label>Retroceder</label>
+                <button classname="botoes" id="retroceder">
+                    <img class="on-contrast-force-white" src="images/retroceder_64x64.png">
+                </button>
+                <label class="lblBotoes">Retroceder</label>
             </td>
             <td>
-                <button classname="botoes" id="lerparar"><img classname="imgbotoes"
-                        src="images/play_64x64.png"></button>
-                <label>Ler/Parar</label>
+                <button classname="botoes" id="lerparar">
+                    <img class="on-contrast-force-white" src="images/play_64x64.png">
+                </button>
+                <label class="lblBotoes">Ler/Parar</label>
             </td>
             <td>
-                <button classname="botoes" id="pausar"><img classname="imgbotoes" src="images/pause_64x64.png"></button>
-                <label>Pausar</label>
+                <button classname="botoes" id="pausar">
+                    <img class="on-contrast-force-white" src="images/pause_64x64.png">
+                </button>
+                <label class="lblBotoes">Pausar</label>
             </td>
             <td>
-                <button classname="botoes" id="avancar"><img classname="imgbotoes"
+                <button classname="botoes" id="avancar"><img class="on-contrast-force-white"
                         src="images/avancar_64x64.png"></button>
-                <label>Avançar</label>
+                <label class="lblBotoes">Avançar</label>
             </td>
             <td>
-                <button classname="botoes" id="configuracoes"><img classname="imgbotoes"
+                <button classname="botoes" id="configuracoes"><img class="on-contrast-force-white"
                         src="images/logo.targetsize-256_contrast-white.png"></button>
-                <label>Configurações</label>
+                <label class="lblBotoes">Configurações</label>
             </td>
         </tr>
+    </table> 
+    <span>Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</span>   
+    <button id="fechar" onclick="window.parent.habilitaPlugin()">
+    <img class="on-contrast-force-white" src="/images/dismiss.contrast-white.png">
+    </button>            
 
-    </table>
-    <button id="fechar" onclick="parent.habilitaPlugin()"></button>
-    <br />
-    <footer>
-        <br />
-        Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021
-    </footer>
     
     <script>
 
@@ -63,6 +68,8 @@
         }
             
         function carregarAcoes() {
+
+            
             document.getElementById("lerparar").addEventListener("click",
                 function () {
                     enviarAcao("lerparar");
@@ -77,24 +84,27 @@
                 function () {
                     enviarAcao("retroceder");
                 }, true);
-
+            
             document.getElementById("avancar").addEventListener("click",
                 function () {
                     enviarAcao("avancar");
                 }, true);
+            
             document.getElementById("configuracoes").addEventListener("click",
-                function () {
-                    enviarAcao("configuracoes");
+                function () {                        
+                    enviarAcao("novaConfiguracao");
                 }, true);
         }
+
     </script> 
        
-    <!--PARA TESTE EM COMPUTADOR LOCAL-->
+    <!--INSERIR PLUGIN NA PÁGINA HTML-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>
-    
+    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script> 
     
     <!--PARA TESTE EM COMPUTADOR LOCAL
     <script type="text/javascript" src="speechNet.js"></script>
+    <script type="text/javascript" src="contraste.js"></script> 
     -->
 
 </body>

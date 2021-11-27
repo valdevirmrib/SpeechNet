@@ -32,7 +32,8 @@ function contaPalavras() {
   tamanhoTexto = quantidadeDePalavras.length;
 }
 
-function habilitaPlugin() {    
+function habilitaPlugin() {
+
   let statusPlugin = document.getElementById('plugin').style.visibility;
 
   if (statusPlugin == "" || statusPlugin == "hidden") {
@@ -61,7 +62,7 @@ function habilitaPluginConfiguracoes() {
 }
 
 function aplicarConfiguracoes(){
-  speechSynthesis.resume();
+  speechSynthesis.resume();  
   habilitaPluginConfiguracoes();
   speech();  
 }
@@ -108,6 +109,13 @@ function acao(e) {
         alteraVoz(parseInt(posicaoDaVozNaLista) - 1);
     }
 
+    let corEscolhida= "";
+    if (e.data.charAt(0) == "c" && e.data.charAt(1) == "o") {        
+        for (contador = 2; contador < 9; contador++) {
+           corEscolhida = corEscolhida + e.data.charAt(contador);
+        } 
+        alteraCores(corEscolhida);        
+    }
 
     switch (e.data) {
         case 'lerparar':
@@ -124,15 +132,15 @@ function acao(e) {
             }
             break;
         case 'pausar':
-            speechSynthesis.pause(speech4n2);
+            speechSynthesis.pause(speech4n2);            
             break;
         case 'retroceder':
             speechSynthesis.resume(speech4n2);
             break;
         case 'avancar':
-            speechSynthesis.resume(speech4n2);
+            speechSynthesis.resume(speech4n2);            
             break;
-        case 'configuracoes':
+        case 'novaConfiguracao':            
             habilitaPluginConfiguracoes();
             break;
     }
@@ -156,8 +164,23 @@ function alteraVoz(posicaoDaVoz) {
     }
 }
 
+function alteraCores(codigoDaCorEscolhida){ 
+    document.body.style.background=codigoDaCorEscolhida;
+    document.getElementsByClassName("lblBotes").style.color=codigoDaCorEscolhida;
+
+    $('#Plugin', parent.document)
+    .contents()    
+    .style({"body.backgroud": codigoDaCorEscolhida});            
 
 
+ }
 
-
-
+ /*
+ function mudarCorBotao(){
+    $('#iFrameBotoes', parent.document)
+    .contents()
+    .find("#btnId")
+    .css({"background-color": "yellow"});
+ }
+ */
+ 
