@@ -25,12 +25,12 @@
                         pandemias, endemias, epidemias e catástrofes no Brasil</h3>
                 </td>                
                 <td>
-                    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
-                        <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>                        
+                    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.parent.toggleContrast()" onkeydown="window.parent.toggleContrast()">
+                        <img class="on-contrast-force-white"  id="imgAltoContraste" src="/images/contrast.png" alt="Contraste"></a>                        
                     <!-- Inserindo o BUTTON do SpeechNet em um site -->
                     <button id="botaoHabilitaPlugin"
                         onclick="window.parent.habilitaPlugin(), window.parent.capturaTexto()">
-                        <img src="images/logo_speech4n2.png" />
+                        <img src="/images/logo_speech4n2.png" />
                     </button>
                     <input type="hidden" id="acao">
                     <!-- Fim da inserção do button-->
@@ -56,7 +56,7 @@
             <h3>Notícias da semana</h3>
             <br />
             <header>Leishmaniose: Cresce casos no Brasil</header>
-            <a href="https://apps.univesp.br/repositorio/"><img id="noticia1" src="images/leishmaniose2.png"></a>
+            <a href="https://apps.univesp.br/repositorio/"><img id="noticia1" src="/images/leishmaniose2.png"></a>
             <p>
             <h4>
                 Existem, no mundo, diferentes tipos de leishmanioses. No Brasil, há atualmente dois tipos, a tegumentar
@@ -164,9 +164,11 @@
 
     <!-- INICIO DA INCLUSÃO DO PLUGIN-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>     
-    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script>  
+    <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script>
+
     <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No"
-     src="https://valdevirmrib.github.io/SpeechNet/windowSpeechNet.html"></iframe>    
+     src="https://valdevirmrib.github.io/SpeechNet/windowSpeechNet.html"></iframe>
+
      <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
         src="https://valdevirmrib.github.io/SpeechNet/configuracoesSpeechNet.html"></iframe>
      <!--FIM DA INCLUSÃO DO PLUGIN -->
