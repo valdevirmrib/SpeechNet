@@ -1,166 +1,278 @@
-<!DOCTYPE html>
 <!--
         Autor: Valdevir Matos Ribeiro
 -->
+
+<!--
+MIT License
+ *
+ * Copyright (c) 2019 Softblue
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+-->
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <link rel='stylesheet' type='text/css' href='css/principal.css'>
-    <link rel="stylesheet" type="text/css" href="css/contraste.css">    
-    <title>SpeechNet-2021</title>    
+    <link rel="stylesheet" type="text/css" href="css/contraste.css">
+    <title>SpeechNet-2021</title>
 </head>
 
-<body>    
-    <header id="Principal">
-        <table>
-            <tr>
-                <td>
-                    <img id="logo" src="images/univespLogin.png" />
-                </td>
-                <td>
-                    <h3 id="tituloPrincipal">Central de Pesquisas, Dados e Informações sobre doenças contagiosas,
-                        pandemias, endemias, epidemias e catástrofes no Brasil</h3>
-                </td>                
-                <td>
-                    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
-                        <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>                        
-                    <!-- Inserindo o BUTTON do SpeechNet em um site -->
-                    <button id="botaoHabilitaPlugin"
-                        onclick="window.parent.habilitaPlugin(), window.parent.capturaTexto()">
-                        <img src="images/logo_speech4n2.png" />
-                    </button>
-                    <input type="hidden" id="acao">
-                    <!-- Fim da inserção do button-->
-                </td>                
-            </tr>
-        </table>
-    </header>
-    <br><br>
-    <nav>
-        <article>            
-            <h3>Menu</h3>
-            <br />            
-            <a href="https://www.saude.gov.br" target="_blank">Ministério da Saúde</a>
-            <a href="https://vacinaja.sp.gov.br" target="_blank">Vacina Já</a>
-            <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/vigilancia_em_saude/index.php?p=307599" target="_blank">
-                Vacina Sampa</a>
-            <a href="https://github.com/" target="_blank">Git hub</a>
-            <a href="https://valdevirmrib.github.io/SpeechNet/" target="_blank">SpeechNet</a>
-        </article>
-    </nav>    
-    <section>
-        <article>
-            <h3>Notícias da semana</h3>
-            <br />
-            <header>Leishmaniose: Cresce casos no Brasil</header>
-            <a href="https://apps.univesp.br/repositorio/"><img id="noticia1" src="images/leishmaniose2.png"></a>
-            <p>
-            <h4>
-                Existem, no mundo, diferentes tipos de leishmanioses. No Brasil, há atualmente dois tipos, a tegumentar
-                e a visceral, cada uma transmitida por um protozoário diferente. A leishmaniose tegumentar tem
-                circulação maior em ambientes rurais, de mata. Além
-                disso, não é letal e está relacionada ao surgimento de lesões na pele ou mucosa. A visceral, por sua
-                vez, se não tratada adequadamente pode ser letal ao ser humano e para os cães, acometendo fígado, baço e
-                medula óssea.
-                <p>
-                    É importante que cada cidadão seja vacinado contra essa doença.
-                </p>
-            </h4>
-            </p>
-        </article>
+<body>
+    <div id="principal" class="toolbar" role="banner">
+        <img id="logo" alt="SpeechNetLogo" src="images/logo_speech4n2.png" />
+        <div class="spacer"></div>
+        <span id="tituloPrincipal">
+            Central de Pesquisas, Dados e Informações sobre doenças contagiosas, pandemias, endemias, epidemias e
+            catástrofes no Brasil
+        </span>
+        <div class="spacer"></div>
+        <a class="acessibilidade" href="#" id="altocontraste" title="Modo Escuro" onclick="window.toggleContrast()">
+            <img class="on-contrast-force-white" id="imgAltoContraste" src="images/contrast.png" alt="Contraste">
+        </a>
+        <a aria-label="SpeechNet no twitter" target="_blank" rel="noopener" href="https://twitter.com.br"
+            title="Twitter">
+            <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 400 400">
+                <rect width="400" height="400" fill="none" />
+                <path
+                    d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23"
+                    fill="#fff" />
+            </svg>
+        </a>
+        <a aria-label="Speechnet no Youtube" target="_blank" rel="noopener" href="https://youtube.com.br"
+            title="YouTube">
+            <svg id="youtube-logo" height="24" width="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24" fill="#fff">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                    d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z" />
+            </svg>
+        </a>
+        <!-- Inserindo o BUTTON do SpeechNet em um site-->
+        <a href="#" title="SpeechNet-2021" onclick="window.parent.habilitaPlugin(), window.parent.capturaTexto(0)">
+            <img id="botaoHabilitaPlugin" src="images/speechNet.png" />
+        </a>
+        <input type="hidden" id="acao">
+        <!-- Fim da inserção do button-->
+    </div>
 
+    <p><br /> </p>
+    <p><br /></p>
+    <br />
+    <aside>
+        <span>
+            <article>
+                <h2>Acessibilidades</h2>
+            </article>
+        </span>
+        <p></p>
         <article>
-            <header>Covid-19: 5 milhões de mortes</header>
-            <a href="https://apps.univesp.br/repositorio/"><img id="campanha1" src="images/covid.png"></a>
-            <h4>
-                Após quase dois anos de pandemia, com avanço da vacinação e a queda de mortos e casos, o mundo atingiu
-                nesta segunda-feira, 1º de novembro, a marca de 5 milhões de mortes pela covid-19, segundo levantamento
-                da Universidade Johns Hopkins (EUA).
-                <p>
-                    Esse número é um pouco menor do que a soma da população dos Estados de Roraima, Amapá, Acre,
-                    Tocantins e Rondônia (5,8 milhões de habitantes).
-                </p>
-                <p>
-                    O número, porém, deve ser significativamente maior do que as estatísticas oficiais conseguem
-                    detectar. Isso por causa da testagem irregular ao redor do mundo e das mortes que ocorrem em casa,
-                    sem atenção médica.
-                </p>
-                <p>
-                    O Brasil figura, em números absolutos, na segunda posição do ranking de mortos no mundo, com mais de
-                    607 mil vítimas da covid - cerca de 12% das mortes no mundo.
-                </p>
-            </h4>
-        </article>
-    </section>
-    
-    <section>
-        <article>
-            <h3>Campanhas</h3>
-            <br />
-            <header>Fake: Vacinas versus AIDS </header>
-            <a href="https://univesp.br"><img id="linkFonte" src="images/fake.jpg"
-                    style="width: 60%; height: 50%; padding: 5% 0% 0% 25%;"></a>
-            <h4>
-                É falso que vacinas para imunização contra o coronavírus SARS-COV-2 transmitem AIDS.
-            </h4>
-        </article>
-
-        <article>
-            <header>Vacina Já!</header>
-            <a href="https://univesp.br"><img id="linkFonte" src="images/vacina.png"
-                    style="width: 60%; height: 50%; padding: 5% 0% 0% 25%;"></a>
-            <h4>
-                <p>
-                    O estado de São Paulo iniciou uma campanha para promover a vacinação já.
-                </p>
-                <p>
-                    A população deverá ir até o posto de saúde mais próximo de sua casa.
-                </p>
-            </h4>
-        </article>
-
-        <article>
-            <header>Novembro Azul: Prevenir o câncer</header>
-            <a href="https://univesp.br"><img id="linkFonte" src="images/novembroAzul.png"
-                    style="width: 60%; height: 50%; padding: 5% 0% 0% 25%;"></a>
-
-            <h4>
-                <p>
-                    O estado de São Paulo iniciou uma campanha para promover a vacinação já. A população deverá ir até o
-                    posto de saúde mais próximo de sua casa.
-                </p>
-            </h4>
-        </article>
-
-    </section>
-
-    <section>
-        <article>
-            <h3>Acessibilidades</h3>
-            <br />
             <header>SpeechNet</header>
-            <a href="#"><img id="SpeechNet" src="images/logo_speech4n2.png" /></a>
-            <header>VLibras</header>
-            <a href="https://www.gov.br/governodigital/pt-br/vlibras/"><img id="libras" src="images/libras2.png"></a>
+            <a href="#"><img class="imagemAcessibilidade" src="images/speechNet.png" /></a>
+            <footer></footer>
         </article>
-    </section>
-    <section>
-        <article>
-            <br />
-            <header>Configurações</header>
-            <img class="on-contrast-force-white" src="images/logo.targetsize-256_contrast-white.png">
-        </article>
-    </section>
 
-    <footer>
         <article>
+            <header>VLibras</header>
+            <a href="https://www.gov.br/governodigital/pt-br/vlibras/"><img class="imagemAcessibilidade"
+                    src="images/libras2.png"></a>
+            <footer></footer>
+        </article>
+        <article>
+            <header>Configurações</header>
+            <img class="on-contrast-force-white"" src=" images/logo.targetsize-256_contrast-white.png">
+            <footer></footer>
+        </article>
+    </aside>
+    <section class="container">
+        <span>
+            <article>
+                <h2>Notícias da semana</h2>
+            </article>
+        </span>
+        <section class="container">
+            <article>
+                <header>Requerimentos Gerais</header>
+                <a href="https://apps.univesp.br/repositorio/"><img id="noticia1" src="images/leishmaniose2.png"></a>
+                <h4>
+                    Eu, [Nome do requerente], portador do RG nº [...], CPF nº [...], residente e domiciliado à Rua
+                    [...],
+                    CEP [...], São Paulo/SP, telefone (...) [...], na condição de Curador Legal da Senhora [...],
+                    portadora do RG nº [...], CPF nº [...], qualificada como cônjuge do ex-servidor [...],
+                    matrícula Siape nº [...], falecido em [...], SOLICITO Avaliação Pericial por Junta Médica Legal,
+                    com vistas à comprovação de Deficiência {...}, para fins de registro como beneficiária de pensão
+                    vitalícia,
+                    com fundamento no art. 217, inciso I, alínea "a", da Lei no. 8.112/90 cumulada com o Art. 16, Inciso
+                    I,
+                    Art. 77, §2º,
+                    incisos I e IV e inciso V, alínea “a” e alínea “c”, item 6, da Lei nº 8.213/1991 e com o Art. 23,
+                    §2º,
+                    inciso I,
+                    da Emenda Constitucional nº103/2019.
+                    <p>
+                        A solicitação faz-se necessária, tendo em vista o contido nos Laudos Médicos [...], cópias em
+                        anexo.
+                    </p>
+                </h4>
+            </article>
+            <footer>
+                <h6>Fonte: Fundação Nacional</h6>
+            </footer>
+            <br />
+            <p></p>
+        </section>
+
+        <section class="container">
+            <article>
+                <header>Covid-19: 5 milhões de mortes</header>
+                <a href="https://apps.univesp.br/repositorio/"><img id="campanha1" src="images/covid.png"></a>
+                <h4>
+                    Após quase dois anos de pandemia, com avanço da vacinação e a queda de mortos e casos, o mundo
+                    atingiu
+                    nesta segunda-feira, 1º de novembro, a marca de 5 milhões de mortes pela covid-19, segundo
+                    levantamento
+                    da Universidade Johns Hopkins (EUA).
+                    <p>
+                        Esse número é um pouco menor do que a soma da população dos Estados de Roraima, Amapá, Acre,
+                        Tocantins e Rondônia (5,8 milhões de habitantes).
+                    </p>
+                    <p>
+                        O número, porém, deve ser significativamente maior do que as estatísticas oficiais conseguem
+                        detectar. Isso por causa da testagem irregular ao redor do mundo e das mortes que ocorrem em
+                        casa,
+                        sem atenção médica.
+                    </p>
+                    <p>
+                        O Brasil figura, em números absolutos, na segunda posição do ranking de mortos no mundo, com
+                        mais de
+                        607 mil vítimas da covid - cerca de 12% das mortes no mundo.
+                    </p>
+                </h4>
+            </article>
+            <footer>
+                <h6>Fonte: Ministério da Saúde</h6>
+            </footer>
+            <br />
+        </section>
+
+        <section class="container">
+            <span>
+                <h2>Campanhas</h2>
+            </span>
+        </section>
+
+        <section class="container">
+            <article>
+                <br />
+                <header>Fake: Vacinas versus AIDS </header>
+                <a href="https://univesp.br"><img id="linkFonte" src="images/fake.jpg"></a>
+                <h4>
+                    É falso que vacinas para imunização contra o coronavírus SARS-COV-2 transmitem AIDS.
+                </h4>
+            </article>
+            <footer>
+                <h6>Fonte: Ministério da Saúde</h6>
+            </footer>
+            <br />
+            <p></p>
+        </section>
+
+        <section class="container">
+            <article>
+                <header>Vacina Já!</header>
+                <a href="https://univesp.br"><img id="linkFonte" src="images/vacina.png"></a>
+                <h4>
+                    <p>
+                        O estado de São Paulo iniciou uma campanha para promover a vacinação já.
+                    </p>
+                    <p>
+                        A população deverá ir até o posto de saúde mais próximo de sua casa.
+                    </p>
+                </h4>
+            </article>
+            <footer>
+                <h6>Fonte: Ministério da Saúde</h6>
+            </footer>
+            <br />
+            <p></p>
+        </section>
+
+        <section class="container">
+            <article>
+                <header>Novembro Azul: Prevenir o câncer</header>
+                <a href="https://univesp.br"><img id="linkFonte" src="images/novembroAzul.png"
+                        style="width: 60%; height: 50%; padding: 5% 0% 0% 25%;"></a>
+                <h4>
+                    <p>
+                        O estado de São Paulo iniciou uma campanha para promover a vacinação já. A população deverá ir
+                        até o
+                        posto de saúde mais próximo de sua casa.
+                    </p>
+                </h4>
+            </article>
+            <footer>
+                <h6>Fonte: Ministério da Saúde</h6>
+            </footer>
+            <br />
+           
+        </section>
+    </section>
+    <aside>
+        <span>
+            <article>
+                <h2>Nossos Links</h2>
+            </article>
+        </span>
+        <p></p>
+        <article>
+            <header>Navegue!</header>
+        </article>
+        <nav>
+            <article>
+                <a href="https://www.saude.gov.br" target="_blank">Ministério da Saúde</a>
+            </article>
+            <article>
+                <a href="https://vacinaja.sp.gov.br" target="_blank">Vacina Já</a>
+            </article>
+            <article>
+                <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/vigilancia_em_saude/index.php?p=307599"
+                    target="_blank">Vacina Sampa</a>
+            </article>
+            <article>
+                <a href="https://github.com/" target="_blank">Git hub</a>
+            </article>
+            <article>
+                <a href="https://valdevirmrib.github.io/SpeechNet/" target="_blank">SpeechNet</a>
+            </article>
+        </nav>
+    </aside>
+    <footer id="footer">
+        <br />
+        <article id="articleFooter">
             <h5> Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</h5>
         </article>
     </footer>
-  
+
 
     <!-- INICIO DA INCLUSÃO DO PLUGIN-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>     
@@ -175,10 +287,13 @@
 
     <!--PARA TESTE EM COMPUTADOR LOCAL
     <script type="text/javascript" src="speechNet.js"></script>
+    <script type="text/javascript" src="contraste.js"></script>
     <iframe id="plugin" name="plugin" class="pluginIframe" scrolling="No" src="windowSpeechNet.html"></iframe>
     <iframe id="configuracoes" name="configuracoes" class="pluginIframe" scrolling="No"
         src="configuracoesSpeechNet.html"></iframe>
+    <iframe id="telaDeLeitura" name="telaDeLeitura" scrolling="Yes" src=""></iframe>
     -->
 
 </body>
+
 </html>

@@ -31,10 +31,8 @@
 
     function updateViewContrast() {
         var body = document.body;
-
         if (this.currentState === null)
             this.currentState = this.getState();
-
         if (this.currentState)
             body.classList.add(this.cssClass);
         else

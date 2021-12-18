@@ -5,19 +5,20 @@
 -->
 
 <html>
-
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>    
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <link rel='stylesheet' type='text/css' href='css/iframe.css'>
-    <link rel='stylesheet' type='text/css' href='css/contraste.css'>    
+    <link rel='stylesheet' type='text/css' href='css/contraste.css'>
     <title></title>
 </head>
-
-<body>    
+<body>
+    <h2>SPEECHNET - 2021</h2>
     <input type="hidden" id="acao">
-    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
-        <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>   
+    <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()">
+        <img class="on-contrast-force-white" id="imgAltoContraste" src="images/contrast.png" alt="Contraste">
+    </a>
+    <button id="fechar" onclick="window.parent.habilitaPlugin()">X</button>
     <table>
         <tr>
             <td>
@@ -39,37 +40,33 @@
                 <label class="lblBotoes">Pausar</label>
             </td>
             <td>
-                <button classname="botoes" id="avancar"><img class="on-contrast-force-white"
-                        src="images/avancar_64x64.png"></button>
+                <button classname="botoes" id="avancar">
+                    <img class="on-contrast-force-white" src="images/avancar_64x64.png"></button>
                 <label class="lblBotoes">Avançar</label>
             </td>
             <td>
-                <button classname="botoes" id="configuracoes"><img class="on-contrast-force-white"
-                        src="images/logo.targetsize-256_contrast-white.png"></button>
+                <button classname="botoes" id="configuracoes">
+                    <img class="on-contrast-force-white" src="images/logo.targetsize-256_contrast-white.png"></button>
                 <label class="lblBotoes">Configurações</label>
             </td>
         </tr>
-    </table> 
-    <span>Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</span>   
-    <button id="fechar" onclick="window.parent.habilitaPlugin()">
-    <img class="on-contrast-force-white" src="images/dismiss.contrast-white.png">
-    </button>            
+    </table>
+    <span>Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</span>
 
-    
     <script>
 
-        let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
-        //let targetOrigem = "*"; //PARA TESTE EM COMPUTADOR LOCAL
+        //let targetOrigem = "*"; //PARA TESTE EM COMPUTADOR LOCAL                
+         let targetOrigem = "https://valdevirmrib.github.io/SpeechNet/";        
 
-        window.addEventListener("load", carregarAcoes());    
-    
+        window.addEventListener("load", carregarAcoes());
+
         function enviarAcao(acao) {
             window.top.postMessage(acao, targetOrigem);
         }
-            
+
         function carregarAcoes() {
 
-            
+
             document.getElementById("lerparar").addEventListener("click",
                 function () {
                     enviarAcao("lerparar");
@@ -84,28 +81,73 @@
                 function () {
                     enviarAcao("retroceder");
                 }, true);
-            
+
             document.getElementById("avancar").addEventListener("click",
                 function () {
                     enviarAcao("avancar");
                 }, true);
-            
+
             document.getElementById("configuracoes").addEventListener("click",
-                function () {                        
+                function () {
                     enviarAcao("novaConfiguracao");
                 }, true);
         }
 
-    </script> 
-       
+        carregarTelaDeLeitura()
+        {
+            if (telaDeLeitura != "visible") {
+                document.getElementById("telaDeLeitura").style.visibility = "visible";
+            } else {
+                document.getElementById("telaDeLeitura").style.visibility = "hidden";
+            }
+        }
+        
+        function botaoComFoco(foco) {
+            let windowspeechNet = new SpeechSynthesisUtterance();
+            windowspeechNet.volume = 0.8;
+            windowspeechNet.rate = 1.0;            
+            switch (foco) {
+                case "lerParar":
+                    speechSynthesis.cancel();
+                    windowspeechNet.text = "Clique para Ler ou Parar a leitura.";
+                    speechSynthesis.speak(windowspeechNet);
+                    break;
+                case "retroceder":
+                    speechSynthesis.cancel();
+                    windowspeechNet.text = "Clique para Voltar, Retroceder para o texto anterior";
+                    speechSynthesis.speak(windowspeechNet);
+                    break;
+                case "avancar":
+                    speechSynthesis.cancel();
+                    windowspeechNet.text = "Clique para Avançar para o próximo texto.";
+                    speechSynthesis.speak(windowspeechNet);                    
+                    break;
+                case "pausar": 
+                    speechSynthesis.resume();
+                    windowspeechNet.text = "Clique para Pausar a leitura.";
+                    speechSynthesis.speak(windowspeechNet);
+                    
+                    break;
+                case "configurar":
+                    speechSynthesis.cancel();
+                    windowspeechNet.text = "Clique para acessar as configurações.";
+                    speechSynthesis.speak(windowspeechNet);
+                    break;
+            }
+        }
+    </script>
+
     <!--INSERIR PLUGIN NA PÁGINA HTML-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script> 
-    
+    <!--FIM -->
+
     <!--PARA TESTE EM COMPUTADOR LOCAL
     <script type="text/javascript" src="speechNet.js"></script>
-    <script type="text/javascript" src="contraste.js"></script> 
+    <script type="text/javascript" src="contraste.js"></script>
     -->
 
+
 </body>
+
 </html>

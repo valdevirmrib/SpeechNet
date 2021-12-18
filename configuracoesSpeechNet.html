@@ -53,19 +53,15 @@
         <button id="aplicar" onclick="window.parent.aplicarConfiguracoes()">Aplicar</button> 
         <span>Autor: Valdevir Matos Ribeiro | Todos os Direitos Reservados 2021</span>
         </main>        
-        <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()">
-            <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" alt="Contraste"></a>   
-        
-        <button id="fechar" onclick="window.parent.habilitaPluginConfiguracoes()">
-            <img class="on-contrast-force-white" src="images/dismiss.contrast-white.png">
-        </button>                
-        
-    
+        <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()">
+            <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" >
+        </a>   
+        <button id="fechar" onclick="window.parent.habilitaPluginConfiguracoes()">X</button>         
     <script>
-
-        let targetOrigem="https://valdevirmrib.github.io/SpeechNet/";
-        //let targetOrigem = "*";  //PARA TESTE EM COMPUTADOR LOCAL
-
+        
+           // let targetOrigem = "*"; //PARA TESTE EM COMPUTADOR LOCAL 
+               let targetOrigem = "https://valdevirmrib.github.io/SpeechNet/";
+        
         window.addEventListener("load", carregarAcoes());
 
         function enviarAcao(acao) {
