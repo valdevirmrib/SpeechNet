@@ -12,10 +12,15 @@ body {
     color: var(--corTexto);
 }
 
+h2{
+    text-align: center;
+    font-size: 18px;    
+}
+
 img {
-    width: 60px;
-    height: 60px;
-    padding: 0px 0px 0px 0px;            
+    width: 50px;
+    height: 50px;
+    position: relative;    
 }
 
 #imgAltoContraste{
@@ -38,6 +43,18 @@ button {
     background-position: center;
 }
 
+#fechar{         
+    font-size: 24px;
+    border: 0px;
+    border-radius: 5px;
+    height: 30px;  
+    width: 30px;
+    position:absolute;
+    float: right;
+    left: 94%;            
+    top: 2px;    
+}
+
 #aplicar{    
     font-weight: bold;
     font-size: 14px;
@@ -54,7 +71,7 @@ button {
     color: var(--corTexto);    
 }
 
-#fechar img{    
+#imgFechar{    
     background-size: 30px 30px;
     height: 30px;  
     width: 30px;
@@ -62,9 +79,10 @@ button {
     float: right;
     left: 95%;            
     top: 0px;
-    border-radius: 0px;
-    
-} 
+    border-radius: 0px;    
+}
+
+
 table {
     width: 100%;
     border: none #000000;
