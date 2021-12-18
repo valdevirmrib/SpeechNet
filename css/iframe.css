@@ -128,14 +128,15 @@ label {
 
 footer {
     font-size: 10px;
-    text-align: center;    
+    text-align: center; 
+    
 }
 
 span{
     display: block;
     text-align: center;
     font-size: 10px;
-    margin-top: 7%;
+    margin-top: 6%;
 }
 
 select{

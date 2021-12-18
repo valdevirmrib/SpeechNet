@@ -216,7 +216,7 @@ article h4{
 /*-----------------------------------------------------------( B )----------------------------------------------*/
 
 body {
-    --corFundo: #64656e;
+    --corFundo: #5a5a8a;
     --corHeader-Footer-Nav: #ec9a01ea ;
     background-color: var(--corFundo);
     font-family: Verdana, Arial, Helvetica, Tahoma, sans-serif;
@@ -288,7 +288,7 @@ h3 {
 }
 
 h4 {
-    color: #000000;    
+    color: var(--corHeader-Footer-Nav);    
     text-align: justify;
 }
 
@@ -338,6 +338,8 @@ section {
     border: solid 0px;
     text-align: left;        
     padding: 0px 5px 0px 0px;
+    text-align: justify;
+    font-size: 18px;
 
 }
 
