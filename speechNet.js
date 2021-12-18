@@ -83,13 +83,13 @@ function habilitaPlugin() {
     let statusPlugin = document.getElementById('plugin').style.visibility;
     if (statusPlugin == "" || statusPlugin == "hidden") {
         document.getElementById('plugin').style.visibility = "visible";
-        document.getElementById('telaDeLeitura').style.visibility = "visible";
+        //document.getElementById('telaDeLeitura').style.visibility = "visible";
         document.getElementById('configuracoes').style.visibility = "hidden";
         speechSynthesis.resume();
     }
     else {
         document.getElementById('plugin').style.visibility = "hidden";
-        document.getElementById('telaDeLeitura').style.visibility = "hidden";
+        //document.getElementById('telaDeLeitura').style.visibility = "hidden";
         speechSynthesis.cancel();
     }
 }
@@ -99,13 +99,13 @@ function habilitaPluginConfiguracoes() {
     if (statusPlugin == "" || statusPlugin == "hidden") {
         document.getElementById('configuracoes').style.visibility = "visible";
         document.getElementById('plugin').style.visibility = "hidden";
-        document.getElementById('telaDeLeitura').style.visibility = "hidden";
+        //document.getElementById('telaDeLeitura').style.visibility = "hidden";
         speechSynthesis.cancel();
     }
     else {
         document.getElementById('configuracoes').style.visibility = "hidden";
         document.getElementById('plugin').style.visibility = "visible";
-        document.getElementById('telaDeLeitura').style.visibility = "visible";
+        //document.getElementById('telaDeLeitura').style.visibility = "visible";
         speechSynthesis.resume();
     }
 }
