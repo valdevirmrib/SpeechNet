@@ -5,7 +5,7 @@
 /*
 MIT License
  *
- * Copyright (c) 2019 Softblue
+ * Copyright (c) 2021 - SpeecheNet
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,6 +35,7 @@ let globalPitch = 1.0;
 let PLAYSTOP = 0;
 let globalTexto;
 let posicaoDoTexto = 0;
+let enderecoHostLocal = true;
 
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
@@ -45,6 +46,7 @@ const isLocalhost = Boolean(
         /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
     )
 );
+
 
 function contaPalavras(textoCapturado) {
     return textoCapturado.trim().split(/\s+/).length;
@@ -220,10 +222,6 @@ function alteraCores(codigoDaCorEscolhida) {
     document.getElementById("footer").style.background = codigoDaCorEscolhida;
 }
 
-function numeroRandomico(limit) {
-    return Math.floor(Math.random() * limit);
-}
-
 function removeEspacoExtra(string) {
     var returnString = "";
     var stringArray = string.split(/\s+/);
@@ -240,94 +238,3 @@ function removeEspacoExtra(string) {
     return returnString;
 }
 
-function removeLeadingAndTrailingWhitespace(inputString) {
-
-    if (typeof inputString === "string") {
-
-        var firstNonWhite = inputString.search(/\S/);
-        if (firstNonWhite !== -1) {
-            for (var i = inputString.length - 1; i >= 0; i--) {
-                if (inputString.charAt(i).search(/\S/) !== -1) {
-                    inputString = inputString.substring(firstNonWhite, i + 1);
-                    break;
-                }
-            }
-        }
-    }
-    return inputString;
-}
-
-function removeTrailingWhitespace(inputString) {
-
-    if (typeof inputString === "string") {
-
-        for (var i = inputString.length - 1; i >= 0; i--) {
-
-            if (inputString.charAt(i).search(/\S/) !== -1) {
-                inputString = inputString.substring(0, i + 1);
-                break;
-            }
-        }
-    }
-    return inputString;
-}
-// Example:
-// randomImage(randomBannerID, ['0.gif',50,50,'1.gif',25,25,'2.gif',50,25]); 
-
-// * Dependencies * 
-// this function requires the following snippet:
-// JavaScript/Randomizers/numeroRandomico
-
-function randomImage(imgTagID, imgArr) {
-    var imgSrc, imgW, imgH, r;
-    r = numeroRandomico(imgArr.length / 3);
-
-    imgSrc = imgArr[r * 3];
-    imgW = imgArr[(r * 3) + 1];
-    imgH = imgArr[(r * 3) + 2];
-
-    document.getElementById(imgTagID).src = imgSrc;
-    document.getElementById(imgTagID).width = imgW;
-    document.getElementById(imgTagID).height = imgH;
-}/*
-   * Dependencies *
-   this function requires the following snippets:
-   JavaScript/images/switchImage
-  
-   BODY Example:
-   <body onLoad="mySlideShow1.play(); mySlideShow2.play();">
-   <img src="originalImage1.gif" name="slide1">
-   <img src="originalImage2.gif" name="slide2">
-  
-   SCRIPT Example:
-   var mySlideList1 = ['image1.gif', 'image2.gif', 'image3.gif'];
-   var mySlideShow1 = new SlideShow(mySlideList1, 'slide1', 3000, "mySlideShow1");
-   var mySlideList2 = ['image4.gif', 'image5.gif', 'image6.gif'];
-   var mySlideShow2 = new SlideShow(mySlideList2, 'slide2', 1000, "mySlideShow2");
-  */
-
-function SlideShow(slideList, image, speed, name) {
-    this.slideList = slideList;
-    this.image = image;
-    this.speed = speed;
-    this.name = name;
-    this.current = 0;
-    this.timer = 0;
-}
-SlideShow.prototype.play = SlideShow_play;
-
-function SlideShow_play() {
-    if (this.current++ === this.slideList.length - 1) {
-        this.current = 0;
-    }
-    switchImage(this.image, this.slideList[this.current]);
-    clearTimeout(this.timer);
-    this.timer = setTimeout(this.name + '.play()', this.speed);
-
-} function switchImage(imgName, imgSrc) {
-    if (document.images) {
-        if (imgSrc !== "none") {
-            document.images[imgName].src = imgSrc;
-        }
-    }
-}

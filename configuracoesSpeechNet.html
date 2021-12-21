@@ -1,9 +1,32 @@
-<!DOCTYPE html>
-
 <!--
     Autor: Valdevir Matos Ribeiro        
 -->
 
+<!--
+MIT License
+ *
+ * Copyright (c) 2021 - SpeecheNet
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+-->
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -57,10 +80,11 @@
         <a class="acessibilidade" href="#" id="altocontraste" onclick="window.toggleContrast()">
             <img class="on-contrast-force-white"  id="imgAltoContraste" src="images/contrast.png" >
         </a>   
-        <button id="fechar" onclick="window.parent.habilitaPluginConfiguracoes()">X</button>         
+        <button id="fechar" onclick="window.parent.habilitaPluginConfiguracoes()">X</button>  
+
     <script>
         
-           //let targetOrigem = "*"; //PARA TESTE EM COMPUTADOR LOCAL 
+          //let targetOrigem = "*"; //PARA TESTE EM COMPUTADOR LOCAL 
            let targetOrigem = "https://valdevirmrib.github.io/SpeechNet/";
         
         window.addEventListener("load", carregarAcoes());
@@ -135,15 +159,15 @@
         }
     </script>
 
-     <!--INSERIR PLUGIN NA PÁGINA HTML-->
+    <!--INSERIR PLUGIN NA PÁGINA HTML-->
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/speechNet.js"></script>    
     <script type="text/javascript" src="https://valdevirmrib.github.io/SpeechNet/contraste.js"></script> 
-     
+    
 
     <!--PARA TESTE EM COMPUTADOR LOCAL
     <script type="text/javascript" src="speechNet.js"></script>
     <script type="text/javascript" src="contraste.js"></script> 
-    -->    
+    -->
 
 </body>
 </html>
